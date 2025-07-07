@@ -1,0 +1,74 @@
+Step 1: Loading data...
+Data shape: (150000, 11)
+   SeriousDlqin2yrs  ...  NumberOfDependents
+1                 1  ...                 2.0
+2                 0  ...                 1.0
+3                 0  ...                 0.0
+4                 0  ...                 0.0
+5                 0  ...                 0.0
+
+[5 rows x 11 columns]
+
+Step 2: Data Exploration
+Missing values:
+ SeriousDlqin2yrs                            0
+RevolvingUtilizationOfUnsecuredLines        0
+age                                         0
+NumberOfTime30-59DaysPastDueNotWorse        0
+DebtRatio                                   0
+MonthlyIncome                           29731
+NumberOfOpenCreditLinesAndLoans             0
+NumberOfTimes90DaysLate                     0
+NumberRealEstateLoansOrLines                0
+NumberOfTime60-89DaysPastDueNotWorse        0
+NumberOfDependents                       3924
+dtype: int64
+
+Class balance:
+ SeriousDlqin2yrs
+0    0.93316
+1    0.06684
+Name: proportion, dtype: float64
+
+Step 3: Data Cleaning & Feature Engineering
+
+Step 4: Preparing data for modeling
+
+Step 5: Model Training & Comparison
+
+Training Logistic Regression...
+Logistic Regression - Accuracy: 0.935, Precision: 0.625, Recall: 0.055, F1: 0.101, ROC AUC: 0.813
+
+Training Random Forest...
+Random Forest - Accuracy: 0.936, Precision: 0.562, Recall: 0.181, F1: 0.273, ROC AUC: 0.844
+
+Training XGBoost...
+XGBoost - Accuracy: 0.936, Precision: 0.558, Recall: 0.212, F1: 0.307, ROC AUC: 0.858
+
+Step 6: Hyperparameter Tuning (Random Forest)
+Best parameters: {'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 200}
+Tuned Random Forest ROC AUC: 0.8672329000681009
+
+Step 7: Cross-Validation (XGBoost)
+XGBoost 5-fold ROC AUC scores: [0.85394939 0.85479613 0.86148559 0.84848869 0.85923884]
+Mean ROC AUC: 0.8555917269138178
+
+Step 8: Presenting Results
+
+Classification Report (Tuned Random Forest):
+              precision    recall  f1-score   support
+
+           0       0.94      0.99      0.97     27995
+           1       0.62      0.16      0.25      2005
+
+    accuracy                           0.94     30000
+   macro avg       0.78      0.57      0.61     30000
+weighted avg       0.92      0.94      0.92     30000
+
+
+
+Summary Table (Test Set Results):
+                     Accuracy  Precision  Recall     F1  ROC AUC
+Logistic Regression     0.935      0.625   0.055  0.101    0.813
+Random Forest           0.936      0.562   0.181  0.273    0.844
+XGBoost                 0.936      0.558   0.212  0.307    0.858
