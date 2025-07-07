@@ -71,6 +71,18 @@ Step-by-Step Process
 - Feature importance analysis revealed which variables are most predictive of default risk.
 - Visualizations and metrics provide clear evidence of model efficacy.
 - The workflow demonstrates the importance of data cleaning, feature engineering, and robust evaluation.
-  
+
+
+![Class_Balance](images/classbalance.png)
+
+![Confusion_Matrix](images/ConfusionMatrix.png)
+
+![ROC_Curve](images/ROCCurves.png)
+
+![Correlation_Matrix](images/CorrelationMatrix.png)
+
+![Feature_Importance](images/FeatureImportance.png)
+
+
 **Business Value**:
 This model can help banks reduce losses by flagging high-risk applicants, leading to better decision-making and potentially lowering the rate of loan charge-offs.
